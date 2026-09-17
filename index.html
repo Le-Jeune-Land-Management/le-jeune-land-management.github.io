@@ -532,10 +532,15 @@ textarea{resize:vertical;min-height:112px}
     </div>
 
     <div class="contact-grid">
-      <!-- Static hosting can't process a form. Replace YOUR_FORM_ID with a real
-           Formspree (or Netlify Forms) endpoint. Until then the script at the
-           bottom of this page falls back to opening the visitor's mail app. -->
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="estimate-form">
+      <!-- Posts straight to ljlmservices@gmail.com via FormSubmit, which needs no
+           account. The address must confirm once: the first submission triggers a
+           confirmation email, and nothing forwards until the link in it is clicked. -->
+      <form action="https://formsubmit.co/ljlmservices@gmail.com" method="POST" id="estimate-form">
+        <input type="hidden" name="_subject" value="Quote request from the website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <!-- honeypot: bots fill this, people never see it -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="field">
           <label for="f-name">Your name</label>
           <input id="f-name" name="name" type="text" autocomplete="name" required>
@@ -680,22 +685,6 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     });
   });
 })();
-
-// Until a real form endpoint is configured, hand the request to the visitor's
-// mail app rather than posting into a placeholder and silently losing the lead.
-var form = document.getElementById('estimate-form');
-form.addEventListener('submit', function (e) {
-  if (form.action.indexOf('YOUR_FORM_ID') === -1) return;
-  e.preventDefault();
-  var get = function (id) { return document.getElementById(id).value.trim(); };
-  var body = 'Name: ' + get('f-name')
-    + '\nPhone: ' + get('f-phone')
-    + '\nCity: ' + get('f-city')
-    + '\n\nWhat I need:\n' + get('f-work');
-  window.location.href = 'mailto:ljlmservices@gmail.com'
-    + '?subject=' + encodeURIComponent('Estimate request from ' + get('f-name'))
-    + '&body=' + encodeURIComponent(body);
-});
 </script>
 
 <script type="application/ld+json">
