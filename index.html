@@ -229,6 +229,7 @@ input,textarea{font-family:var(--sans);font-size:16px;color:var(--ink-900);
 input:focus,textarea:focus{border-color:var(--oxblood-400);outline-offset:1px}
 textarea{resize:vertical;min-height:112px}
 .form-note{font-size:14px;color:var(--pewter-500)}
+.opt{font-weight:400;letter-spacing:.04em;text-transform:none;color:var(--pewter-500)}
 .details dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:11px 18px;
   font-size:16px;align-items:baseline}
 .details dt{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.13em;
@@ -306,7 +307,7 @@ textarea{resize:vertical;min-height:112px}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M21 16.9v2.6a1.7 1.7 0 0 1-1.9 1.7 17 17 0 0 1-7.4-2.6 16.6 16.6 0 0 1-5.1-5.1A17 17 0 0 1 4 6.1 1.7 1.7 0 0 1 5.7 4.2h2.6a1.7 1.7 0 0 1 1.7 1.5c.1.8.3 1.7.6 2.5a1.7 1.7 0 0 1-.4 1.8l-1 1a13.6 13.6 0 0 0 5.1 5.1l1-1a1.7 1.7 0 0 1 1.8-.4c.8.3 1.7.5 2.5.6a1.7 1.7 0 0 1 1.5 1.7z"/></svg>
           Call (512) 575-5452
         </a>
-        <a class="btn btn-outline" href="mailto:ljlmservices@gmail.com?subject=Free%20quote%20request">Request a free quote</a>
+        <a class="btn btn-outline" href="#estimate">Request a free quote</a>
       </div>
       <p class="creed">
         <b>When Excellence Matters.</b>
@@ -548,6 +549,10 @@ textarea{resize:vertical;min-height:112px}
         <div class="field">
           <label for="f-phone">Phone</label>
           <input id="f-phone" name="phone" type="tel" autocomplete="tel" required>
+        </div>
+        <div class="field">
+          <label for="f-email">Email <span class="opt">(optional)</span></label>
+          <input id="f-email" name="email" type="email" autocomplete="email">
         </div>
         <div class="field">
           <label for="f-city">Property city or area</label>
