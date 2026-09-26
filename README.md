@@ -45,10 +45,11 @@ The canonical URL appears in several places and they must all agree:
 
 ### Contact form
 
-The estimate form posts to `https://formspree.io/f/YOUR_FORM_ID`. Replace
-`YOUR_FORM_ID` with a real Formspree endpoint. Until then, a script at the
-bottom of the page intercepts the submit and opens the visitor's mail app
-instead, so a request is never silently dropped.
+The quote request form is Jobber's embedded work request form, so requests land
+directly in the business's Jobber account. The embed snippet sits in the
+`#estimate` section of `index.html`. The form renders inside a cross-origin
+iframe: its fields, wording and button colour are edited in Jobber, not here.
+The page only styles the card around it (`.quote-card` in the CSS).
 
 ## Build scripts
 
