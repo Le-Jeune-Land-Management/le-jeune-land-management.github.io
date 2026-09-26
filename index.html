@@ -218,18 +218,39 @@ section{scroll-margin-top:70px}
 
 /* ---------- contact ---------- */
 .contact-grid{display:grid;gap:34px}
-@media (min-width:860px){.contact-grid{grid-template-columns:1.05fr .95fr;gap:52px}}
-form{display:flex;flex-direction:column;gap:15px}
-.field{display:flex;flex-direction:column;gap:6px}
-label{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.11em;
-  text-transform:uppercase;color:var(--pewter-500)}
-input,textarea{font-family:var(--sans);font-size:16px;color:var(--ink-900);
-  background:var(--bone-50);border:1px solid var(--bone-200);border-radius:2px;
-  padding:12px 13px;width:100%}
-input:focus,textarea:focus{border-color:var(--oxblood-400);outline-offset:1px}
-textarea{resize:vertical;min-height:112px}
+@media (min-width:860px){.contact-grid{grid-template-columns:1.32fr .68fr;gap:48px}}
 .form-note{font-size:14px;color:var(--pewter-500)}
-.opt{font-weight:400;letter-spacing:.04em;text-transform:none;color:var(--pewter-500)}
+
+/* Jobber request form. The form itself lives in a cross-origin iframe, so its
+   fields and button colour are set in Jobber (Settings > Requests); everything
+   here is the frame around it, made to read as part of the page. */
+.quote-card{background:#fff;border:1px solid var(--bone-200);
+  border-top:3px solid var(--oxblood-600);border-radius:2px;
+  box-shadow:0 1px 2px rgba(58,12,11,.05),0 12px 30px -18px rgba(58,12,11,.28)}
+.quote-card-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
+  gap:4px 16px;padding:18px 22px 14px;border-bottom:1px solid var(--bone-200)}
+.quote-card-head h3{font-size:21px;color:var(--oxblood-700)}
+.quote-card-head span{font-size:12px;font-weight:600;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--slate-600)}
+.quote-card-body{padding:6px 8px 10px}
+.quote-card-foot{padding:14px 22px 16px;border-top:1px solid var(--bone-200);
+  background:var(--bone-100)}
+.quote-card-foot .form-note{color:var(--slate-600)}
+
+/* Jobber's own stylesheet caps the form at 760px, centres it and rounds it off;
+   let it fill the card instead, and hold some height so the page doesn't jump
+   while it loads. */
+.quote-card .jobber-inline-work-request{position:relative;max-width:none}
+.quote-card .jobber-inline-work-request.jobber-spinner{min-height:520px}
+.quote-card iframe.jobber-work-request{max-width:none;border-radius:0;padding:0}
+.quote-card .jobber-spinner{opacity:1}
+.quote-card .jobber-spinner:after{background:none;box-shadow:none;border:3px solid var(--bone-200);
+  border-top-color:var(--oxblood-600);width:30px;height:30px;margin:-15px 0 0 -15px}
+.quote-card .jobber-flash{margin:18px 14px;padding:18px;font-family:var(--sans);font-size:16px;
+  color:var(--ink-900);background:var(--bone-100);border:1px solid var(--bone-200);
+  border-left:3px solid var(--oxblood-600);border-radius:2px;text-align:left}
+.quote-card .jobber-flash p{margin:0}
+.quote-card .jobber-flash p+p::after{content:". Please call (512) 575-5452 or email ljlmservices@gmail.com."}
 .details dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:11px 18px;
   font-size:16px;align-items:baseline}
 .details dt{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.13em;
@@ -533,43 +554,26 @@ textarea{resize:vertical;min-height:112px}
     </div>
 
     <div class="contact-grid">
-      <!-- Posts straight to ljlmservices@gmail.com via FormSubmit, which needs no
-           account. The address must confirm once: the first submission triggers a
-           confirmation email, and nothing forwards until the link in it is clicked. -->
-      <form action="https://formsubmit.co/ljlmservices@gmail.com" method="POST" id="estimate-form">
-        <input type="hidden" name="_subject" value="Quote request from the website">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <!-- honeypot: bots fill this, people never see it -->
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="field">
-          <label for="f-name">Your name</label>
-          <input id="f-name" name="name" type="text" autocomplete="name" required>
+      <!-- Requests go straight into Jobber, the business's job management app.
+           The script swaps the empty div below for Jobber's hosted form. -->
+      <div class="quote-card">
+        <div class="quote-card-head">
+          <h3>Tell us about the job</h3>
+          <span>Takes about 2 minutes</span>
         </div>
-        <div class="field">
-          <label for="f-phone">Phone</label>
-          <input id="f-phone" name="phone" type="tel" autocomplete="tel" required>
+        <div class="quote-card-body">
+          <div id="19e53c4b-b980-4f5c-9dc1-fdebde99a682-1418617"></div>
+          <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
+          <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js" clienthub_id="19e53c4b-b980-4f5c-9dc1-fdebde99a682-1418617" form_url="https://clienthub.getjobber.com/client_hubs/19e53c4b-b980-4f5c-9dc1-fdebde99a682/public/work_request/embedded_work_request_form?form_id=1418617"></script>
+          <noscript><p class="form-note" style="padding:18px 14px">The request form needs JavaScript.
+            Call <a href="tel:+15125755452">(512) 575-5452</a> or email
+            <a href="mailto:ljlmservices@gmail.com">ljlmservices@gmail.com</a> instead.</p></noscript>
         </div>
-        <div class="field">
-          <label for="f-email">Email <span class="opt">(optional)</span></label>
-          <input id="f-email" name="email" type="email" autocomplete="email">
+        <div class="quote-card-foot">
+          <p class="form-note">Rather talk it through?
+            <a href="tel:+15125755452">Call (512) 575-5452</a>.</p>
         </div>
-        <div class="field">
-          <label for="f-city">Property city or area</label>
-          <input id="f-city" name="city" type="text" autocomplete="address-level2"
-                 placeholder="Cedar Creek, Bastrop, Elgin&hellip;">
-        </div>
-        <div class="field">
-          <label for="f-work">What do you need done?</label>
-          <textarea id="f-work" name="work" required
-            placeholder="Roughly 180 feet of privacy fence along the back line, plus a gate."></textarea>
-        </div>
-        <button class="btn btn-dark" type="submit" style="align-self:flex-start;cursor:pointer">
-          Send request
-        </button>
-        <p class="form-note">Rather talk it through?
-          <a href="tel:+15125755452">Call (512) 575-5452</a>.</p>
-      </form>
+      </div>
 
       <div class="details">
         <dl>
