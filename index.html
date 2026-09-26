@@ -284,6 +284,10 @@ section{scroll-margin-top:70px}
   font-family:var(--sans);font-size:17px;font-weight:600;color:var(--bone-50);
   text-decoration:none;padding:6px}
 .callbar svg{width:18px;height:18px}
+/* slid away while the quote form is on screen: it would sit over the fields,
+   and on iOS ride up above the keyboard. The form card has its own call link. */
+.callbar{transition:transform .22s ease}
+.callbar.away{transform:translateY(100%)}
 @media (min-width:760px){.callbar{display:none}}
 </style>
 </head>
@@ -643,6 +647,15 @@ section{scroll-margin-top:70px}
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Hide the mobile call bar while the quote form is in view.
+(function () {
+  var bar = document.querySelector('.callbar'), card = document.querySelector('.quote-card');
+  if (!bar || !card || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (entries) {
+    bar.classList.toggle('away', entries[0].isIntersecting);
+  }, { rootMargin: '-80px 0px -80px 0px' }).observe(card);
+})();
 
 // A tel: link does nothing on a desktop with no dialer, so every "call" control
 // on this page is a dead click there. On non-touch devices, copy the number and
