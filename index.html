@@ -14,7 +14,7 @@
 <meta name="description" content="Le'Jeune Land Management, LLC: landscaping, lawn care, tree work, fences, decks and property cleanup in Cedar Creek, Bastrop and across Bastrop County, TX. Residential and commercial. Free estimates. Call (512) 575-5452.">
 <link rel="canonical" href="https://ljlmservices.com/">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="theme-color" content="#3A0C0B">
+<meta name="theme-color" content="#1F3B4D">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Le'Jeune Land Management, LLC">
@@ -34,14 +34,14 @@
 
 <style>
 :root{
-  /* sampled from the wax seal */
+  /* brand primary: the navy the seal sits on. navy-600 is the exact brand
+     colour (#1F3B4D, also Jobber's primary); the rest of the scale is built from it */
+  --navy-900:#0F1E28; --navy-800:#152A37; --navy-700:#1A3242;
+  --navy-600:#1F3B4D; --navy-500:#2B4E64; --navy-400:#3E6680;
+  /* accent: the red of the wax seal. Phone calls to action, small highlights */
   --oxblood-900:#1F0807; --oxblood-800:#2E0C0A; --oxblood-700:#3A0C0B;
   --oxblood-600:#4A1412; --oxblood-500:#5C1916; --oxblood-400:#6E2826;
-  /* sampled from the cover photograph */
-  --field-700:#2C4715; --field-600:#375919;
-  /* the bee, and the backlight */
-  --honey-600:#A97C28; --honey-400:#E0B95C; --honey-300:#F2DC98;
-  /* silver embossing and paper */
+  /* the seal's silver embossing, and paper */
   --bone-50:#FCFCFC; --bone-100:#F6F3EE; --bone-200:#EBE5DB;
   --pewter-300:#C9C4BB; --pewter-500:#8A857C;
   /* pewter-500 fails contrast on the light ground (3.31); this is its light-mode twin */
@@ -67,11 +67,13 @@ body{
 }
 @media (min-width:760px){body{padding-bottom:0}}
 img{max-width:100%;height:auto;display:block}
-a{color:var(--oxblood-600)}
+a{color:var(--navy-600)}
 h1,h2,h3{font-family:var(--serif);color:var(--ink-900);
   font-weight:600;line-height:1.14;letter-spacing:-.012em;text-wrap:balance;margin:0}
 p{margin:0}
-:focus-visible{outline:3px solid var(--honey-600);outline-offset:3px;border-radius:2px}
+:focus-visible{outline:3px solid var(--navy-400);outline-offset:3px;border-radius:2px}
+.site-head :focus-visible,.quote :focus-visible,.site-foot :focus-visible,.callbar :focus-visible{
+  outline-color:var(--bone-50)}
 
 .wrap{max-width:var(--wrap);margin:0 auto;padding-inline:20px}
 @media (min-width:760px){.wrap{padding-inline:32px}}
@@ -79,7 +81,7 @@ p{margin:0}
 .eyebrow{font-family:var(--sans);font-size:12px;font-weight:600;
   letter-spacing:.15em;text-transform:uppercase;color:var(--pewter-500)}
 
-.skip{position:absolute;left:-9999px;top:0;background:var(--oxblood-600);color:#fff;
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy-600);color:#fff;
   padding:10px 16px;z-index:100}
 .skip:focus{left:8px;top:8px}
 
@@ -88,17 +90,21 @@ p{margin:0}
   font-size:16px;font-weight:600;line-height:1;text-decoration:none;
   padding:14px 22px;border-radius:2px;border:1px solid transparent;
   transition:background .15s ease,border-color .15s ease,color .15s ease}
-.btn-gold{background:var(--honey-400);color:var(--oxblood-900);border-color:var(--honey-400)}
-.btn-gold:hover{background:var(--honey-300);border-color:var(--honey-300)}
-.btn-outline{background:transparent;color:var(--oxblood-600);border-color:var(--bone-200)}
-.btn-outline:hover{border-color:var(--oxblood-400);background:rgba(74,20,18,.04)}
-.btn-dark{background:var(--oxblood-600);color:var(--bone-50);border-color:var(--oxblood-600)}
-.btn-dark:hover{background:var(--oxblood-500);border-color:var(--oxblood-500)}
+/* silver, like the seal's embossing: the button that sits on navy */
+.btn-silver{background:var(--bone-50);color:var(--navy-900);border-color:var(--bone-50)}
+.btn-silver:hover{background:var(--bone-200);border-color:var(--bone-200)}
+.btn-outline{background:transparent;color:var(--navy-600);border-color:var(--bone-200)}
+.btn-outline:hover{border-color:var(--navy-400);background:rgba(31,59,77,.04)}
+.btn-dark{background:var(--navy-600);color:var(--bone-50);border-color:var(--navy-600)}
+.btn-dark:hover{background:var(--navy-500);border-color:var(--navy-500)}
+/* phone calls to action carry the seal red */
+.btn-call{background:var(--oxblood-600);color:var(--bone-50);border-color:var(--oxblood-600)}
+.btn-call:hover{background:var(--oxblood-500);border-color:var(--oxblood-500)}
 .btn svg{width:17px;height:17px;flex:none}
 
 /* ---------- header ---------- */
-.site-head{position:sticky;top:0;z-index:50;background:var(--oxblood-900);
-  border-bottom:1px solid var(--oxblood-600)}
+.site-head{position:sticky;top:0;z-index:50;background:var(--navy-600);
+  border-bottom:1px solid var(--navy-500)}
 .site-head .wrap{display:flex;align-items:center;justify-content:space-between;
   gap:16px;min-height:62px;padding-block:9px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;min-width:0}
@@ -106,7 +112,7 @@ p{margin:0}
 .brand b{display:block;font-family:var(--serif);font-size:17px;font-weight:600;
   color:var(--bone-50);letter-spacing:.005em;line-height:1.1;white-space:nowrap}
 .brand-sub{display:block;font-family:var(--sans);font-size:9.5px;font-weight:600;
-  letter-spacing:.19em;text-transform:uppercase;color:var(--honey-400);margin-top:2px}
+  letter-spacing:.19em;text-transform:uppercase;color:var(--pewter-300);margin-top:2px}
 .head-call{display:none}
 @media (min-width:560px){
   .head-call{display:inline-flex;font-size:15px;padding:11px 18px}
@@ -118,7 +124,7 @@ p{margin:0}
 .hero{background:var(--bone-100);color:var(--ink-700);position:relative;overflow:hidden;
   border-bottom:1px solid var(--bone-200)}
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(120% 90% at 78% 26%,rgba(169,124,40,.11),transparent 60%)}
+  background:radial-gradient(120% 90% at 78% 26%,rgba(31,59,77,.07),transparent 60%)}
 .hero .wrap{position:relative;display:grid;gap:34px;
   padding-block:46px 52px;align-items:center}
 @media (min-width:880px){
@@ -126,8 +132,8 @@ p{margin:0}
 }
 .hero-copy{display:flex;flex-direction:column;align-items:flex-start;gap:20px;min-width:0}
 .hero .eyebrow{color:var(--slate-600)}                                  /* 5.21 AA  */
-.hero h1{color:var(--oxblood-700);font-size:clamp(29px,4.9vw,46px);font-weight:600;
-  letter-spacing:-.021em;line-height:1.1}                                /* 15.33 AAA */
+.hero h1{color:var(--navy-600);font-size:clamp(29px,4.9vw,46px);font-weight:600;
+  letter-spacing:-.021em;line-height:1.1}                                /* 10.59 AAA */
 .hero h1 em{font-style:normal;color:var(--ink-900)}                     /* 16.12 AAA */
 .hero-sub{color:var(--ink-700);font-size:clamp(17px,2vw,19px);max-width:46ch} /* 10.47 AAA */
 .hero-kicker{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.12em;
@@ -136,7 +142,7 @@ p{margin:0}
 .creed{border-top:1px solid var(--bone-200);padding-top:17px;width:100%;
   display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
 .creed b{font-family:var(--serif);font-size:19px;font-weight:600;
-  color:var(--oxblood-700);letter-spacing:.005em}
+  color:var(--navy-600);letter-spacing:.005em}
 .creed span{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.17em;
   text-transform:uppercase;color:var(--slate-600)}
 .hero-seal{justify-self:center;width:min(76vw,272px);
@@ -150,7 +156,7 @@ p{margin:0}
   box-shadow:0 6px 28px rgba(0,0,0,.28);opacity:0;pointer-events:none;
   transition:opacity .18s ease,transform .18s ease;max-width:calc(100vw - 32px)}
 .toast.show{opacity:1;transform:translate(-50%,0)}
-.toast b{color:var(--honey-400);font-weight:600}
+.toast b{color:#fff;font-weight:600}
 @media (max-width:759px){.toast{bottom:calc(74px + env(safe-area-inset-bottom,0px))}}
 
 /* ---------- section scaffolding ---------- */
@@ -171,14 +177,14 @@ section{scroll-margin-top:70px}
 }
 .row-body{min-width:0}
 .rows-title{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.15em;
-  text-transform:uppercase;color:var(--oxblood-600);margin:0 0 12px}
+  text-transform:uppercase;color:var(--navy-600);margin:0 0 12px}
 .row h4{font-family:var(--serif);color:var(--ink-900);font-weight:600;line-height:1.14;
   letter-spacing:-.012em;margin:0 0 5px;font-size:21px}
 .row p{font-size:16px;color:var(--ink-700);max-width:62ch}
-.row-ico{width:28px;height:28px;color:var(--oxblood-600);opacity:.62;margin-top:1px}
+.row-ico{width:28px;height:28px;color:var(--navy-600);opacity:.62;margin-top:1px}
 @media (min-width:700px){.row-ico{width:40px;height:40px;margin-top:-3px}}
 .rows-note{margin-top:22px;font-size:15.5px;color:var(--pewter-500)}
-.rows-note a{color:var(--oxblood-600);font-weight:600}
+.rows-note a{color:var(--navy-600);font-weight:600}
 
 /* ---------- service area ---------- */
 .area-grid{display:grid;gap:28px}
@@ -194,14 +200,14 @@ section{scroll-margin-top:70px}
 .work-note p{max-width:58ch;font-size:16px}
 
 /* ---------- quote band ---------- */
-.quote{background:var(--oxblood-700);color:var(--bone-50)}
+.quote{background:var(--navy-700);color:var(--bone-50)}
 .quote .wrap{padding-block:52px;display:flex;flex-direction:column;
   align-items:flex-start;gap:18px;max-width:840px}
 .quote blockquote{margin:0;font-family:var(--serif);font-weight:500;
   font-size:clamp(22px,3.4vw,31px);line-height:1.34;color:var(--bone-50);
   letter-spacing:-.01em;text-wrap:balance}
 .quote cite{font-style:normal;font-family:var(--sans);font-size:12px;font-weight:600;
-  letter-spacing:.15em;text-transform:uppercase;color:var(--honey-400)}
+  letter-spacing:.15em;text-transform:uppercase;color:var(--pewter-300)}
 
 /* ---------- faq ---------- */
 .faq{border-top:1px solid var(--bone-200)}
@@ -211,7 +217,7 @@ section{scroll-margin-top:70px}
   display:flex;justify-content:space-between;align-items:center;gap:18px}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"";flex:none;width:11px;height:11px;
-  border-right:1.8px solid var(--honey-600);border-bottom:1.8px solid var(--honey-600);
+  border-right:1.8px solid var(--oxblood-600);border-bottom:1.8px solid var(--oxblood-600);
   transform:rotate(45deg) translate(-2px,-2px);transition:transform .18s ease}
 .faq details[open] summary::after{transform:rotate(225deg) translate(-3px,-3px)}
 .faq .a{padding-bottom:20px;font-size:16px;max-width:66ch}
@@ -225,11 +231,11 @@ section{scroll-margin-top:70px}
    fields and button colour are set in Jobber (Settings > Requests); everything
    here is the frame around it, made to read as part of the page. */
 .quote-card{background:#fff;border:1px solid var(--bone-200);
-  border-top:3px solid var(--oxblood-600);border-radius:2px;
-  box-shadow:0 1px 2px rgba(58,12,11,.05),0 12px 30px -18px rgba(58,12,11,.28)}
+  border-top:3px solid var(--navy-600);border-radius:2px;
+  box-shadow:0 1px 2px rgba(15,30,40,.05),0 12px 30px -18px rgba(15,30,40,.28)}
 .quote-card-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
   gap:4px 16px;padding:18px 22px 14px;border-bottom:1px solid var(--bone-200)}
-.quote-card-head h3{font-size:21px;color:var(--oxblood-700)}
+.quote-card-head h3{font-size:21px;color:var(--navy-600)}
 .quote-card-head span{font-size:12px;font-weight:600;letter-spacing:.11em;
   text-transform:uppercase;color:var(--slate-600)}
 .quote-card-body{padding:4px 0 8px}
@@ -246,10 +252,10 @@ section{scroll-margin-top:70px}
 .quote-card iframe.jobber-work-request{max-width:none;border-radius:0;padding:0}
 .quote-card .jobber-spinner{opacity:1}
 .quote-card .jobber-spinner:after{background:none;box-shadow:none;border:3px solid var(--bone-200);
-  border-top-color:var(--oxblood-600);width:30px;height:30px;margin:-15px 0 0 -15px}
+  border-top-color:var(--navy-600);width:30px;height:30px;margin:-15px 0 0 -15px}
 .quote-card .jobber-flash{margin:18px 14px;padding:18px;font-family:var(--sans);font-size:16px;
   color:var(--ink-900);background:var(--bone-100);border:1px solid var(--bone-200);
-  border-left:3px solid var(--oxblood-600);border-radius:2px;text-align:left}
+  border-left:3px solid var(--navy-600);border-radius:2px;text-align:left}
 .quote-card .jobber-flash p{margin:0}
 .quote-card .jobber-flash p+p::after{content:". Please call (512) 575-5452 or email ljlmservices@gmail.com."}
 .details dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:11px 18px;
@@ -258,13 +264,13 @@ section{scroll-margin-top:70px}
   text-transform:uppercase;color:var(--pewter-500);padding-top:3px}
 .details dd{margin:0;color:var(--ink-900)}
 .details dd a{font-weight:600;text-decoration:none;border-bottom:1px solid var(--bone-200)}
-.details dd a:hover{border-bottom-color:var(--oxblood-600)}
+.details dd a:hover{border-bottom-color:var(--navy-600)}
 .details .big{font-family:var(--serif);font-size:25px;font-weight:600;letter-spacing:-.01em}
 
 /* ---------- footer ---------- */
-.site-foot{background:var(--oxblood-900);color:var(--pewter-300);padding-block:38px 34px}
+.site-foot{background:var(--navy-900);color:var(--pewter-300);padding-block:38px 34px}
 .foot-top{display:flex;flex-wrap:wrap;gap:22px 40px;align-items:flex-start;
-  justify-content:space-between;padding-bottom:24px;border-bottom:1px solid var(--oxblood-600)}
+  justify-content:space-between;padding-bottom:24px;border-bottom:1px solid var(--navy-700)}
 .foot-brand{display:flex;align-items:center;gap:13px}
 .foot-brand img{width:52px;height:52px;flex:none}
 .foot-brand b{font-family:var(--serif);font-size:19px;color:var(--bone-50);
@@ -272,7 +278,7 @@ section{scroll-margin-top:70px}
 .foot-brand .foot-sub{display:block;font-size:13px;color:var(--pewter-500)}
 .foot-links{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:15px}
 .foot-links a{color:var(--pewter-300);text-decoration:none}
-.foot-links a:hover{color:var(--honey-400)}
+.foot-links a:hover{color:var(--bone-50)}
 .foot-bot{padding-top:20px;display:flex;flex-wrap:wrap;gap:8px 26px;
   font-size:13.5px;color:var(--pewter-500)}
 
@@ -308,7 +314,7 @@ section{scroll-margin-top:70px}
         <span class="brand-sub">Land Management, LLC</span>
       </span>
     </a>
-    <a class="btn btn-gold head-call" href="tel:+15125755452">
+    <a class="btn btn-silver head-call" href="tel:+15125755452">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M21 16.9v2.6a1.7 1.7 0 0 1-1.9 1.7 17 17 0 0 1-7.4-2.6 16.6 16.6 0 0 1-5.1-5.1A17 17 0 0 1 4 6.1 1.7 1.7 0 0 1 5.7 4.2h2.6a1.7 1.7 0 0 1 1.7 1.5c.1.8.3 1.7.6 2.5a1.7 1.7 0 0 1-.4 1.8l-1 1a13.6 13.6 0 0 0 5.1 5.1l1-1a1.7 1.7 0 0 1 1.8-.4c.8.3 1.7.5 2.5.6a1.7 1.7 0 0 1 1.5 1.7z"/></svg>
       (512) 575-5452
     </a>
@@ -329,7 +335,7 @@ section{scroll-margin-top:70px}
         over 30 years of experience in the landscaping and outdoor construction industry.
         See our list of services below for more information.</p>
       <div class="hero-cta">
-        <a class="btn btn-dark" href="tel:+15125755452">
+        <a class="btn btn-call" href="tel:+15125755452">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M21 16.9v2.6a1.7 1.7 0 0 1-1.9 1.7 17 17 0 0 1-7.4-2.6 16.6 16.6 0 0 1-5.1-5.1A17 17 0 0 1 4 6.1 1.7 1.7 0 0 1 5.7 4.2h2.6a1.7 1.7 0 0 1 1.7 1.5c.1.8.3 1.7.6 2.5a1.7 1.7 0 0 1-.4 1.8l-1 1a13.6 13.6 0 0 0 5.1 5.1l1-1a1.7 1.7 0 0 1 1.8-.4c.8.3 1.7.5 2.5.6a1.7 1.7 0 0 1 1.5 1.7z"/></svg>
           Call (512) 575-5452
         </a>
