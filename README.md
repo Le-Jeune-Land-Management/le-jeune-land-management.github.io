@@ -63,10 +63,14 @@ Neither is needed to publish. Both are for sharing a preview.
 
 ## Design notes
 
-- **Colour** is sampled from the business's own wax-seal logo rather than
-  chosen. The tokens live in the `:root` block of `index.html`. One rule to
-  keep: the honey gold fails contrast on the light background (2.33:1), so it is
-  an accent for dark backgrounds only.
+- **Colour** follows the business's brand. The primary is navy `#1F3B4D`
+  (`--navy-600`), the colour the wax seal sits on, and the same primary their
+  Jobber account uses. The seal's red `#4A1412` (`--oxblood-600`) is the accent:
+  phone calls to action and small highlights. The tokens live in the `:root`
+  block of `index.html`. Two rules to keep: the honey gold fails contrast on the
+  light background (2.33:1), so it is an accent for dark backgrounds only; and
+  red on navy is nearly invisible (1.28:1), so never put a red button on a navy
+  band, which is why the header's call button is gold.
 - **Type** is Fraunces for display and Source Sans 3 for body, from Google
   Fonts, with Georgia and system sans as fallbacks. Self-hosting the fonts is the
   obvious next performance improvement.
