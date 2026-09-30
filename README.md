@@ -9,6 +9,7 @@ A static one-page site with no build step, hosted on GitHub Pages.
 index.html     the whole site (CSS and JS inline, one HTTP request)
 assets/        seal artwork, favicon, apple touch icon
 robots.txt     crawler rules, points at the sitemap
+llms.txt       plain-text business summary for AI assistants
 sitemap.xml    single URL
 .nojekyll      serve files as-is, no Jekyll processing
 tools/         local preview server and two optional build scripts
@@ -42,6 +43,7 @@ The canonical URL appears in several places and they must all agree:
 - the JSON-LD `@id` and `url` fields at the bottom of `index.html`
 - `robots.txt`
 - `sitemap.xml`
+- `llms.txt`
 
 ### Contact form
 
