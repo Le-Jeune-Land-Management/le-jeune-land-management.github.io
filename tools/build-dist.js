@@ -28,7 +28,7 @@ const dist = path.join(root, 'dist');
 fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(path.join(dist, 'assets'), { recursive: true });
 
-for (const f of ['index.html', 'sitemap.xml', '.nojekyll']) {
+for (const f of ['index.html', 'sitemap.xml', 'llms.txt', '.nojekyll']) {
   const from = path.join(root, f);
   if (fs.existsSync(from)) fs.copyFileSync(from, path.join(dist, f));
 }
