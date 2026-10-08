@@ -3,11 +3,14 @@
 Website for Le'Jeune Land Management: landscaping, lawn care and outdoor
 construction in Cedar Creek, Texas, serving Bastrop County.
 
-A static one-page site with no build step, hosted on GitHub Pages.
+A static one-page site with no build step, hosted on GitHub Pages, plus two
+small unlinked helper pages for review requests.
 
 ```
 index.html     the whole site (CSS and JS inline, one HTTP request)
-assets/        seal artwork, favicon, apple touch icon
+assets/        seal artwork, favicon, apple touch icon, job photos (work-*)
+review/        ljlmservices.com/review: forwards to the Google review form
+qr/            ljlmservices.com/qr: full-screen QR code for /review, shown on a phone
 robots.txt     crawler rules, points at the sitemap
 sitemap.xml    single URL
 .nojekyll      serve files as-is, no Jekyll processing
@@ -42,6 +45,8 @@ The canonical URL appears in several places and they must all agree:
 - the JSON-LD `@id` and `url` fields at the bottom of `index.html`
 - `robots.txt`
 - `sitemap.xml`
+- the QR code in `qr/index.html`, which encodes `https://ljlmservices.com/review/`;
+  regenerate it (any QR library, error correction M) rather than hand-editing
 
 ### Contact form
 
@@ -50,6 +55,18 @@ directly in the business's Jobber account. The embed snippet sits in the
 `#estimate` section of `index.html`. The form renders inside a cross-origin
 iframe: its fields, wording and button colour are edited in Jobber, not here.
 The page only styles the card around it (`.quote-card` in the CSS).
+
+## Review links
+
+The Google review form is `https://g.page/r/CW5eaQH4BgjMEBM/review`. The site
+links to it from the button under the neighbor quote and from the footer. The
+Google row in the contact details links to the Maps listing instead, like the
+Facebook and Nextdoor rows.
+
+`/review` and `/qr` exist so the owner can text a short link and show a QR code
+to customers after a job. Both are `noindex` and not linked from the homepage.
+If Google ever changes the review URL, update `review/index.html`, and every
+printed card and QR code keeps working.
 
 ## Build scripts
 
