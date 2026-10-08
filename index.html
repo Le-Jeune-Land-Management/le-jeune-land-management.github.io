@@ -208,6 +208,9 @@ section{scroll-margin-top:70px}
   letter-spacing:-.01em;text-wrap:balance}
 .quote cite{font-style:normal;font-family:var(--sans);font-size:12px;font-weight:600;
   letter-spacing:.15em;text-transform:uppercase;color:var(--pewter-300)}
+.review-ask{margin-top:14px;padding-top:24px;border-top:1px solid var(--navy-500);
+  align-self:stretch;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
+.review-ask p{margin:0;flex:1 1 280px;font-size:17px;color:var(--pewter-300)}
 
 /* ---------- faq ---------- */
 .faq{border-top:1px solid var(--bone-200)}
@@ -258,14 +261,19 @@ section{scroll-margin-top:70px}
   border-left:3px solid var(--navy-600);border-radius:2px;text-align:left}
 .quote-card .jobber-flash p{margin:0}
 .quote-card .jobber-flash p+p::after{content:". Please call (512) 575-5452 or email ljlmservices@gmail.com."}
-.details dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:11px 18px;
-  font-size:16px;align-items:baseline}
-.details dt{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--pewter-500);padding-top:3px}
+.details dl{margin:0;display:grid;grid-template-columns:22px 1fr;gap:14px 16px;
+  font-size:16px;align-items:start}
+.details dt{display:flex;align-items:center;height:24px;color:var(--navy-600)}
+.details dt svg{width:22px;height:22px;opacity:.62}
+.details dt.dt-big{height:34px}
+.details dt.dt-brand svg{width:19px;height:19px;margin-left:1.5px}
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .details dd{margin:0;color:var(--ink-900)}
 .details dd a{font-weight:600;text-decoration:none;border-bottom:1px solid var(--bone-200)}
 .details dd a:hover{border-bottom-color:var(--navy-600)}
 .details .big{font-family:var(--serif);font-size:25px;font-weight:600;letter-spacing:-.01em}
+.details .alt{display:block;margin-top:6px;font-size:15px;color:var(--slate-600)}
 
 /* ---------- footer ---------- */
 .site-foot{background:var(--navy-900);color:var(--pewter-300);padding-block:38px 34px}
@@ -518,6 +526,13 @@ section{scroll-margin-top:70px}
     <blockquote>&ldquo;Craftsmanship and attention to detail &hellip; incredibly kind,
       communicative, and thoughtful.&rdquo;</blockquote>
     <cite>Verified review &middot; Nextdoor &middot; Cedar Creek, TX</cite>
+    <div class="review-ask">
+      <p>Worked with us? A quick Google review helps your neighbors find us.</p>
+      <a class="btn btn-silver" href="https://g.page/r/CW5eaQH4BgjMEBM/review"
+         target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.94 5.96 6.56.95-4.75 4.63 1.12 6.54L12 17.5l-5.87 3.08 1.12-6.54L2.5 9.41l6.56-.95z"/></svg>
+        Leave a Google review</a>
+    </div>
   </div>
 </div>
 
@@ -588,21 +603,21 @@ section{scroll-margin-top:70px}
 
       <div class="details">
         <dl>
-          <dt>Phone</dt>
-          <dd class="big"><a href="tel:+15125755452">(512) 575-5452</a></dd>
-          <dt>Also</dt>
-          <dd><a href="tel:+15129219519">(512) 921-9519</a></dd>
-          <dt>Email</dt>
+          <dt class="dt-big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg><span class="vh">Phone</span></dt>
+          <dd><a class="big" href="tel:+15125755452">(512) 575-5452</a>
+            <span class="alt">or reach us at <a href="tel:+15129219519">(512) 921-9519</a></span></dd>
+          <dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6l8.5 7 8.5-7"/></svg><span class="vh">Email</span></dt>
           <dd><a href="mailto:ljlmservices@gmail.com">ljlmservices@gmail.com</a></dd>
-          <dt>Based in</dt>
+          <dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span class="vh">Based in</span></dt>
           <dd>Cedar Creek, Texas 78612</dd>
-          <dt>Owner</dt>
+          <dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><span class="vh">Owner</span></dt>
           <dd>David Young</dd>
-          <dt>Find us</dt>
-          <dd>
-            <a href="https://www.facebook.com/p/LeJeune-Land-Management-61564619109488/" target="_blank" rel="noopener">Facebook</a><br>
-            <a href="https://nextdoor.com/pages/lejeune-land-management-cedar-creek-tx/" target="_blank" rel="noopener">Nextdoor</a>
-          </dd>
+          <dt class="dt-brand"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.12 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.49 0-1.95.93-1.95 1.88v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.09 24 18.1 24 12.07z"/></svg><span class="vh">Facebook</span></dt>
+          <dd><a href="https://www.facebook.com/p/LeJeune-Land-Management-61564619109488/" target="_blank" rel="noopener">Facebook</a></dd>
+          <dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M6 9v11h4v-5a2 2 0 0 1 4 0v5h4V9"/></svg><span class="vh">Nextdoor</span></dt>
+          <dd><a href="https://nextdoor.com/pages/lejeune-land-management-cedar-creek-tx/" target="_blank" rel="noopener">Nextdoor</a></dd>
+          <dt class="dt-brand"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg><span class="vh">Google</span></dt>
+          <dd><a href="https://maps.app.goo.gl/cfLeV8vrdjr1hjuo8" target="_blank" rel="noopener">Google</a></dd>
         </dl>
       </div>
     </div>
@@ -631,6 +646,7 @@ section{scroll-margin-top:70px}
         <a href="#work">Recent work</a>
         <a href="#faq">Questions</a>
         <a href="#estimate">Free estimate</a>
+        <a href="https://g.page/r/CW5eaQH4BgjMEBM/review" target="_blank" rel="noopener">Leave a review</a>
       </nav>
     </div>
     <div class="foot-bot">
@@ -802,6 +818,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
       "sameAs": [
         "https://www.facebook.com/p/LeJeune-Land-Management-61564619109488/",
         "https://nextdoor.com/pages/lejeune-land-management-cedar-creek-tx/",
+        "https://maps.google.com/?cid=14702008645796322926",
         "https://www.bbb.org/us/tx/cedar-creek/profile/landscape-maintenance/lejeune-land-management-0825-1000236355"
       ],
       "hasOfferCatalog": {
