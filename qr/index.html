@@ -16,19 +16,23 @@
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;height:100%}
+/* one screen, no scrolling or bounce: sizes below use svh, the height left
+   once the browser's address and tool bars are showing */
+html,body{margin:0;height:100%;overflow:hidden;overscroll-behavior:none}
 /* always light: a QR code scans best dark-on-white, whatever the phone's theme */
 body{background:#FCFCFC;color:#1A1715;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:22px;padding:24px 20px calc(24px + env(safe-area-inset-bottom,0px));text-align:center}
+  /* gaps and margins shrink on short screens so everything still fits */
+  --pad:min(24px,3vh,3svh);gap:min(22px,2.6vh,2.6svh);
+  padding:var(--pad) 20px calc(var(--pad) + env(safe-area-inset-bottom,0px));text-align:center}
 .brand{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:15px;font-weight:600;
   letter-spacing:.04em;color:#1F3B4D}
-.brand img{width:min(30vw,15vh,140px);height:auto}
+.brand img{width:min(30vw,15vh,15svh,140px);height:auto}
 h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,7vw,34px);
   line-height:1.2;font-weight:600;color:#0F1E28}
 /* padding in px: a % would be taken from the page width and squeeze the code when wide */
-.code{width:min(78vw,52vh,420px);aspect-ratio:1;padding:16px;background:#fff;
+.code{width:min(78vw,52vh,52svh,420px);aspect-ratio:1;padding:16px;background:#fff;
   border:1px solid #EBE5DB;border-radius:6px}
 .code svg{display:block;width:100%;height:100%}
 .alt{margin:0;font-size:16px;color:#6B655C}
@@ -38,8 +42,9 @@ h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,7vw
   body{display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto auto;
     column-gap:clamp(24px,6vw,64px);row-gap:12px;align-content:center;justify-content:center}
   .brand,h1,.alt{grid-column:1}
-  .brand img{width:min(22vh,90px)}
-  .code{grid-column:2;grid-row:1/4;width:min(82vh,45vw)}
+  .brand img{width:min(22vh,22svh,90px)}
+  h1{font-size:min(30px,8vh,8svh)}
+  .code{grid-column:2;grid-row:1/4;width:min(calc(100vh - 2*var(--pad)),calc(100svh - 2*var(--pad)),45vw)}
 }
 </style>
 </head>
