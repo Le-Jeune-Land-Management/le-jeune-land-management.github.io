@@ -27,11 +27,20 @@ body{background:#FCFCFC;color:#1A1715;
 .brand img{width:min(30vw,15vh,140px);height:auto}
 h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,7vw,34px);
   line-height:1.2;font-weight:600;color:#0F1E28}
-.code{width:min(78vw,52vh,420px);aspect-ratio:1;padding:6%;background:#fff;
+/* padding in px: a % would be taken from the page width and squeeze the code when wide */
+.code{width:min(78vw,52vh,420px);aspect-ratio:1;padding:16px;background:#fff;
   border:1px solid #EBE5DB;border-radius:6px}
 .code svg{display:block;width:100%;height:100%}
 .alt{margin:0;font-size:16px;color:#6B655C}
 .alt b{color:#1F3B4D}
+/* phone held sideways: code on the right, words on the left */
+@media (orientation:landscape) and (max-height:500px){
+  body{display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto auto;
+    column-gap:clamp(24px,6vw,64px);row-gap:12px;align-content:center;justify-content:center}
+  .brand,h1,.alt{grid-column:1}
+  .brand img{width:min(22vh,90px)}
+  .code{grid-column:2;grid-row:1/4;width:min(82vh,45vw)}
+}
 </style>
 </head>
 <body>
