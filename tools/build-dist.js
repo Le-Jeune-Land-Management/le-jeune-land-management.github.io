@@ -32,8 +32,10 @@ for (const f of ['index.html', 'sitemap.xml', '.nojekyll']) {
   const from = path.join(root, f);
   if (fs.existsSync(from)) fs.copyFileSync(from, path.join(dist, f));
 }
-fs.mkdirSync(path.join(dist, 'review'));
-fs.copyFileSync(path.join(root, 'review', 'index.html'), path.join(dist, 'review', 'index.html'));
+for (const d of ['review', 'qr']) {
+  fs.mkdirSync(path.join(dist, d), { recursive: true });
+  fs.copyFileSync(path.join(root, d, "index.html"), path.join(dist, d, "index.html"));
+}
 for (const f of fs.readdirSync(path.join(root, 'assets'))) {
   fs.copyFileSync(path.join(root, 'assets', f), path.join(dist, 'assets', f));
 }
