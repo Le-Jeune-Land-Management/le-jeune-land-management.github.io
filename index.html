@@ -4,12 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<!-- ===================================================================
-     CANONICAL URL. Change this in ALL of: <link rel=canonical>, the
-     og:url / og:image tags, the JSON-LD @id and url fields, and
-     sitemap.xml + robots.txt, once the final domain is settled.
-     =================================================================== -->
-
 <title>Le'Jeune Land Management | Bastrop Landscaping &amp; Fences</title>
 <meta name="description" content="Le'Jeune Land Management, LLC: landscaping, lawn care, tree work, fences, decks and property cleanup in Cedar Creek, Bastrop and across Bastrop County, TX. Residential and commercial. Free estimates. Call (512) 575-5452.">
 <link rel="canonical" href="https://ljlmservices.com/">
@@ -34,17 +28,12 @@
 
 <style>
 :root{
-  /* brand primary: the navy the seal sits on. navy-600 is the exact brand
-     colour (#1F3B4D, also Jobber's primary); the rest of the scale is built from it */
   --navy-900:#0F1E28; --navy-800:#152A37; --navy-700:#1A3242;
   --navy-600:#1F3B4D; --navy-500:#2B4E64; --navy-400:#3E6680;
-  /* accent: the red of the wax seal. Phone calls to action, small highlights */
   --oxblood-900:#1F0807; --oxblood-800:#2E0C0A; --oxblood-700:#3A0C0B;
   --oxblood-600:#4A1412; --oxblood-500:#5C1916; --oxblood-400:#6E2826;
-  /* the seal's silver embossing, and paper */
   --bone-50:#FCFCFC; --bone-100:#F6F3EE; --bone-200:#EBE5DB;
   --pewter-300:#C9C4BB; --pewter-500:#8A857C;
-  /* pewter-500 fails contrast on the light ground (3.31); this is its light-mode twin */
   --slate-600:#6B655C;
   --ink-700:#3D3833; --ink-900:#1A1715;
 
@@ -62,7 +51,6 @@ body{
   margin:0;background:var(--bone-100);color:var(--ink-700);
   font-family:var(--sans);font-size:17px;line-height:1.65;
   -webkit-font-smoothing:antialiased;
-  /* room for the sticky mobile call bar */
   padding-bottom:calc(60px + env(safe-area-inset-bottom,0px));
 }
 @media (min-width:760px){body{padding-bottom:0}}
@@ -85,24 +73,20 @@ p{margin:0}
   padding:10px 16px;z-index:100}
 .skip:focus{left:8px;top:8px}
 
-/* ---------- buttons ---------- */
 .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);
   font-size:16px;font-weight:600;line-height:1;text-decoration:none;
   padding:14px 22px;border-radius:2px;border:1px solid transparent;
   transition:background .15s ease,border-color .15s ease,color .15s ease}
-/* silver, like the seal's embossing: the button that sits on navy */
 .btn-silver{background:var(--bone-50);color:var(--navy-900);border-color:var(--bone-50)}
 .btn-silver:hover{background:var(--bone-200);border-color:var(--bone-200)}
 .btn-outline{background:transparent;color:var(--navy-600);border-color:var(--bone-200)}
 .btn-outline:hover{border-color:var(--navy-400);background:rgba(31,59,77,.04)}
 .btn-dark{background:var(--navy-600);color:var(--bone-50);border-color:var(--navy-600)}
 .btn-dark:hover{background:var(--navy-500);border-color:var(--navy-500)}
-/* phone calls to action carry the seal red */
 .btn-call{background:var(--oxblood-600);color:var(--bone-50);border-color:var(--oxblood-600)}
 .btn-call:hover{background:var(--oxblood-500);border-color:var(--oxblood-500)}
 .btn svg{width:17px;height:17px;flex:none}
 
-/* ---------- header ---------- */
 .site-head{position:sticky;top:0;z-index:50;background:var(--navy-600);
   border-bottom:1px solid var(--navy-500)}
 .site-head .wrap{display:flex;align-items:center;justify-content:space-between;
@@ -118,9 +102,6 @@ p{margin:0}
   .head-call{display:inline-flex;font-size:15px;padding:11px 18px}
 }
 
-/* ---------- hero ---------- */
-/* Paper ground so the oxblood seal separates from it. Every text pair below
-   is contrast-checked against bone-100. */
 .hero{background:var(--bone-100);color:var(--ink-700);position:relative;overflow:hidden;
   border-bottom:1px solid var(--bone-200)}
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;
@@ -131,13 +112,13 @@ p{margin:0}
   .hero .wrap{grid-template-columns:1.12fr .88fr;gap:52px;padding-block:72px 78px}
 }
 .hero-copy{display:flex;flex-direction:column;align-items:flex-start;gap:20px;min-width:0}
-.hero .eyebrow{color:var(--slate-600)}                                  /* 5.21 AA  */
+.hero .eyebrow{color:var(--slate-600)}
 .hero h1{color:var(--navy-600);font-size:clamp(29px,4.9vw,46px);font-weight:600;
-  letter-spacing:-.021em;line-height:1.1}                                /* 10.59 AAA */
-.hero h1 em{font-style:normal;color:var(--ink-900)}                     /* 16.12 AAA */
-.hero-sub{color:var(--ink-700);font-size:clamp(17px,2vw,19px);max-width:46ch} /* 10.47 AAA */
+  letter-spacing:-.021em;line-height:1.1}
+.hero h1 em{font-style:normal;color:var(--ink-900)}
+.hero-sub{color:var(--ink-700);font-size:clamp(17px,2vw,19px);max-width:46ch}
 .hero-kicker{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--oxblood-600);margin-bottom:-10px}   /* 13.55 AAA */
+  text-transform:uppercase;color:var(--oxblood-600);margin-bottom:-10px}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
 .creed{border-top:1px solid var(--bone-200);padding-top:17px;width:100%;
   display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
@@ -149,7 +130,6 @@ p{margin:0}
   filter:drop-shadow(0 14px 28px rgba(58,12,11,.22))}
 @media (min-width:880px){.hero-seal{justify-self:end;width:min(30vw,310px)}}
 
-/* ---------- number copied toast (desktop tel: fallback) ---------- */
 .toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,14px);
   z-index:80;background:var(--ink-900);color:var(--bone-50);
   font-family:var(--sans);font-size:15px;padding:12px 18px;border-radius:3px;
@@ -159,7 +139,6 @@ p{margin:0}
 .toast b{color:#fff;font-weight:600}
 @media (max-width:759px){.toast{bottom:calc(74px + env(safe-area-inset-bottom,0px))}}
 
-/* ---------- section scaffolding ---------- */
 section{scroll-margin-top:70px}
 .band{padding-block:54px}
 @media (min-width:760px){.band{padding-block:72px}}
@@ -168,7 +147,6 @@ section{scroll-margin-top:70px}
 .sec-head h2{font-size:clamp(26px,3.6vw,36px)}
 .sec-head p{color:var(--ink-700)}
 
-/* ---------- services: ruled rows ---------- */
 .rows{border-top:1px solid var(--bone-200)}
 .row{display:grid;grid-template-columns:30px 1fr;gap:0 16px;
   padding-block:22px;border-bottom:1px solid var(--bone-200);align-items:start}
@@ -186,7 +164,6 @@ section{scroll-margin-top:70px}
 .rows-note{margin-top:22px;font-size:15.5px;color:var(--pewter-500)}
 .rows-note a{color:var(--navy-600);font-weight:600}
 
-/* ---------- service area ---------- */
 .area-grid{display:grid;gap:28px}
 @media (min-width:760px){.area-grid{grid-template-columns:1fr 1fr;gap:44px}}
 .cities{list-style:none;margin:0;padding:0;
@@ -194,7 +171,6 @@ section{scroll-margin-top:70px}
 .cities li{padding-block:8px;border-bottom:1px solid var(--bone-200);
   font-size:16px;color:var(--ink-900)}
 
-/* ---------- photos ---------- */
 .photo{margin:0;border-radius:2px;overflow:hidden;background:var(--bone-200)}
 .photo img{display:block;width:100%;height:100%;object-fit:cover}
 .intro{display:grid;gap:26px;margin-bottom:30px}
@@ -206,7 +182,6 @@ section{scroll-margin-top:70px}
   .intro-photo{aspect-ratio:4/5}
 }
 
-/* ---------- work ---------- */
 .work{display:grid;gap:18px}
 .work-photo{aspect-ratio:3/2}
 @media (min-width:880px){
@@ -218,7 +193,6 @@ section{scroll-margin-top:70px}
   padding:24px 26px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
 .work-note p{max-width:58ch;font-size:16px}
 
-/* ---------- quote band ---------- */
 .quote{background:var(--navy-700);color:var(--bone-50)}
 .quote .wrap{padding-block:52px;display:flex;flex-direction:column;
   align-items:flex-start;gap:18px;max-width:840px}
@@ -231,7 +205,6 @@ section{scroll-margin-top:70px}
   align-self:stretch;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
 .review-ask p{margin:0;flex:1 1 280px;font-size:17px;color:var(--pewter-300)}
 
-/* ---------- faq ---------- */
 .faq{border-top:1px solid var(--bone-200)}
 .faq details{border-bottom:1px solid var(--bone-200)}
 .faq summary{cursor:pointer;list-style:none;padding-block:18px;
@@ -244,14 +217,10 @@ section{scroll-margin-top:70px}
 .faq details[open] summary::after{transform:rotate(225deg) translate(-3px,-3px)}
 .faq .a{padding-bottom:20px;font-size:16px;max-width:66ch}
 
-/* ---------- contact ---------- */
 .contact-grid{display:grid;gap:34px}
 @media (min-width:860px){.contact-grid{grid-template-columns:1.32fr .68fr;gap:48px}}
 .form-note{font-size:14px;color:var(--pewter-500)}
 
-/* Jobber request form. The form itself lives in a cross-origin iframe, so its
-   fields and button colour are set in Jobber (Settings > Requests); everything
-   here is the frame around it, made to read as part of the page. */
 .quote-card{background:#fff;border:1px solid var(--bone-200);
   border-top:3px solid var(--navy-600);border-radius:2px;
   box-shadow:0 1px 2px rgba(15,30,40,.05),0 12px 30px -18px rgba(15,30,40,.28)}
@@ -266,9 +235,6 @@ section{scroll-margin-top:70px}
   background:var(--bone-100)}
 .quote-card-foot .form-note{color:var(--slate-600)}
 
-/* Jobber's own stylesheet caps the form at 760px, centres it and rounds it off;
-   let it fill the card instead, and hold some height so the page doesn't jump
-   while it loads. */
 .quote-card .jobber-inline-work-request{position:relative;max-width:none}
 .quote-card .jobber-inline-work-request.jobber-spinner{min-height:520px}
 .quote-card iframe.jobber-work-request{max-width:none;border-radius:0;padding:0}
@@ -295,7 +261,6 @@ section{scroll-margin-top:70px}
 .details .big{font-family:var(--serif);font-size:25px;font-weight:600;letter-spacing:-.01em}
 .details .alt{display:block;margin-top:6px;font-size:15px;color:var(--slate-600)}
 
-/* ---------- footer ---------- */
 .site-foot{background:var(--navy-900);color:var(--pewter-300);padding-block:38px 34px}
 .foot-top{display:flex;flex-wrap:wrap;gap:22px 40px;align-items:flex-start;
   justify-content:space-between;padding-bottom:24px;border-bottom:1px solid var(--navy-700)}
@@ -310,7 +275,6 @@ section{scroll-margin-top:70px}
 .foot-bot{padding-top:20px;display:flex;flex-wrap:wrap;gap:8px 26px;
   font-size:13.5px;color:var(--pewter-500)}
 
-/* ---------- sticky mobile call bar ---------- */
 .callbar{position:fixed;left:0;right:0;bottom:0;z-index:60;
   background:var(--oxblood-600);border-top:1px solid var(--oxblood-400);
   padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px))}
@@ -318,9 +282,6 @@ section{scroll-margin-top:70px}
   font-family:var(--sans);font-size:17px;font-weight:600;color:var(--bone-50);
   text-decoration:none;padding:6px}
 .callbar svg{width:18px;height:18px}
-/* slid away while the hero call button is on screen (same call, twice), and
-   while the quote form is: it would sit over the fields, and on iOS ride up
-   above the keyboard. The form card has its own call link. */
 .callbar{transition:transform .22s ease}
 .callbar.away{transform:translateY(100%)}
 @media (min-width:760px){.callbar{display:none}}
@@ -330,7 +291,6 @@ section{scroll-margin-top:70px}
 
 <a class="skip" href="#main">Skip to content</a>
 
-<!-- ============ HEADER ============ -->
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="#top">
@@ -352,7 +312,6 @@ section{scroll-margin-top:70px}
 
 <main id="main">
 
-<!-- ============ HERO ============ -->
 <div class="hero" id="top">
   <div class="wrap">
     <div class="hero-copy">
@@ -383,7 +342,6 @@ section{scroll-margin-top:70px}
   </div>
 </div>
 
-<!-- ============ SERVICES ============ -->
 <section class="band band-50" id="services">
   <div class="wrap">
     <div class="intro">
@@ -504,7 +462,6 @@ section{scroll-margin-top:70px}
   </div>
 </section>
 
-<!-- ============ SERVICE AREA ============ -->
 <section class="band" id="area">
   <div class="wrap area-grid">
     <div class="sec-head" style="margin-bottom:0">
@@ -530,7 +487,6 @@ section{scroll-margin-top:70px}
   </div>
 </section>
 
-<!-- ============ RECENT WORK ============ -->
 <section class="band band-50" id="work">
   <div class="wrap">
     <div class="sec-head">
@@ -558,7 +514,6 @@ section{scroll-margin-top:70px}
   </div>
 </section>
 
-<!-- ============ PULL QUOTE ============ -->
 <div class="quote">
   <div class="wrap">
     <p class="eyebrow" style="color:var(--pewter-300)">What neighbors say</p>
@@ -575,7 +530,6 @@ section{scroll-margin-top:70px}
   </div>
 </div>
 
-<!-- ============ FAQ ============ -->
 <section class="band" id="faq">
   <div class="wrap">
     <div class="sec-head">
@@ -607,7 +561,6 @@ section{scroll-margin-top:70px}
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
 <section class="band band-50" id="estimate">
   <div class="wrap">
     <div class="sec-head">
@@ -619,8 +572,6 @@ section{scroll-margin-top:70px}
     </div>
 
     <div class="contact-grid">
-      <!-- Requests go straight into Jobber, the business's job management app.
-           The script swaps the empty div below for Jobber's hosted form. -->
       <div class="quote-card">
         <div class="quote-card-head">
           <h3>Tell us about the job</h3>
@@ -665,7 +616,6 @@ section{scroll-margin-top:70px}
 
 </main>
 
-<!-- ============ FOOTER ============ -->
 <footer class="site-foot">
   <div class="wrap">
     <div class="foot-top">
@@ -696,7 +646,6 @@ section{scroll-margin-top:70px}
   </div>
 </footer>
 
-<!-- ============ STICKY MOBILE CALL BAR ============ -->
 <div class="callbar">
   <a href="tel:+15125755452">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M21 16.9v2.6a1.7 1.7 0 0 1-1.9 1.7 17 17 0 0 1-7.4-2.6 16.6 16.6 0 0 1-5.1-5.1A17 17 0 0 1 4 6.1 1.7 1.7 0 0 1 5.7 4.2h2.6a1.7 1.7 0 0 1 1.7 1.5c.1.8.3 1.7.6 2.5a1.7 1.7 0 0 1-.4 1.8l-1 1a13.6 13.6 0 0 0 5.1 5.1l1-1a1.7 1.7 0 0 1 1.8-.4c.8.3 1.7.5 2.5.6a1.7 1.7 0 0 1 1.5 1.7z"/></svg>
@@ -709,16 +658,12 @@ section{scroll-margin-top:70px}
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
 
-// Hide the mobile call bar while the hero call button or the quote form is in
-// view: the button already offers the same call, and the bar would cover the form.
 (function () {
   var bar = document.querySelector('.callbar');
   var targets = [document.querySelector('.hero .btn-call'), document.querySelector('.quote-card')]
     .filter(Boolean);
   if (!bar || !targets.length || !('IntersectionObserver' in window)) return;
   var showing = new Set();
-  // The page opens with the hero button on screen, so start hidden rather than
-  // sliding the bar in and straight back out.
   bar.classList.add('away');
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
@@ -729,9 +674,6 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   targets.forEach(function (t) { io.observe(t); });
 })();
 
-// A tel: link does nothing on a desktop with no dialer, so every "call" control
-// on this page is a dead click there. On non-touch devices, copy the number and
-// say so instead. Touch devices keep the normal dialer behaviour.
 (function () {
   var toast = document.getElementById('toast'), timer;
   function show(html) {
@@ -766,8 +708,6 @@ document.getElementById('yr').textContent = new Date().getFullYear();
       var num = pretty(a.getAttribute('href'));
       var ok = function () { show('Copied <b>' + num + '</b> to your clipboard'); };
       var no = function () {
-        // async clipboard is refused without focus or permission in some browsers,
-        // so fall back to the old selection trick before giving up
         show(legacyCopy(num)
           ? 'Copied <b>' + num + '</b> to your clipboard'
           : 'Call <b>' + num + '</b>');

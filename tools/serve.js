@@ -15,7 +15,6 @@ http.createServer((req, res) => {
   let rel = decodeURIComponent(req.url.split('?')[0]);
   if (rel.endsWith('/')) rel += 'index.html';
 
-  // keep requests inside the project directory
   const file = path.join(ROOT, rel);
   if (!file.startsWith(ROOT)) { res.writeHead(403); return res.end('Forbidden'); }
 
