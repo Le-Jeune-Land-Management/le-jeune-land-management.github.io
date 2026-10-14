@@ -45,7 +45,6 @@ for (const f of fs.readdirSync(path.join(root, 'assets'))) {
 fs.writeFileSync(path.join(dist, 'robots.txt'),
   '# Temporary review deploy. Do not index.\nUser-agent: *\nDisallow: /\n');
 
-// verify rather than assume
 const deny = denyList();
 const walk = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e =>
   e.isDirectory() ? walk(path.join(d, e.name)) : [path.relative(dist, path.join(d, e.name))]);
